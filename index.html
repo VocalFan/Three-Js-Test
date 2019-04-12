@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - geometry - cube</title>
+		<title>Three.js webgl</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
@@ -14,7 +14,7 @@
 	</head>
 	<body>
 
-		<script src="packages/Three.js"></script>
+		<script src="../build/three.js"></script>
 
 		<script>
 			var camera, scene, renderer;
@@ -26,7 +26,8 @@
 				camera.position.z = 400;
 				scene = new THREE.Scene();
 				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
-				mesh = new THREE.Mesh( geometry );
+				var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
